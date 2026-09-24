@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <!-- Dark Background Gradient matching GitHub Slate -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117" />
+      <stop offset="100%" stop-color="#161b22" />
+    </linearGradient>
+
+    <!-- Accent Gradients -->
+    <linearGradient id="primaryGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="boxBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#21262d" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#161b22" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1200" height="400" rx="16" fill="url(#bgGrad)" stroke="#30363d" stroke-width="2"/>
+
+  <!-- Background Decorative Grid Lines -->
+  <g stroke="#21262d" stroke-width="1" opacity="0.4">
+    <path d="M 0 80 H 1200 M 0 160 H 1200 M 0 240 H 1200 M 0 320 H 1200" />
+    <path d="M 200 0 V 400 M 400 0 V 400 M 600 0 V 400 M 800 0 V 400 M 1000 0 V 400" />
+  </g>
+
+  <!-- Top Accent Bar -->
+  <rect x="0" y="0" width="1200" height="6" fill="url(#primaryGlow)"/>
+
+  <!-- Title Section -->
+  <g transform="translate(80, 100)">
+    <!-- Security Badge -->
+    <rect x="0" y="0" width="180" height="28" rx="14" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+    <circle cx="14" cy="14" r="5" fill="#10b981"/>
+    <text x="28" y="18" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" letter-spacing="0.5">AGENTIC GUARDRAIL</text>
+
+    <!-- Main Title -->
+    <text x="0" y="70" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="800" letter-spacing="-1">
+      Dual-LLM Security Pipeline
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="105" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="400">
+      Indirect Prompt Injection Defense &amp; Deterministic Output Guardrails
+    </text>
+
+    <!-- Tech Stack Pill Tags -->
+    <g transform="translate(0, 135)">
+      <!-- Llama 3.2 -->
+      <rect x="0" y="0" width="100" height="26" rx="6" fill="#30363d"/>
+      <text x="50" y="17" fill="#38bdf8" font-family="sans-serif" font-size="12" font-weight="600" text-anchor="middle">Llama 3.2</text>
+
+      <!-- Python -->
+      <rect x="110" y="0" width="80" height="26" rx="6" fill="#30363d"/>
+      <text x="150" y="17" fill="#818cf8" font-family="sans-serif" font-size="12" font-weight="600" text-anchor="middle">Python</text>
+
+      <!-- Pydantic -->
+      <rect x="200" y="0" width="90" height="26" rx="6" fill="#30363d"/>
+      <text x="245" y="17" fill="#c084fc" font-family="sans-serif" font-size="12" font-weight="600" text-anchor="middle">Pydantic</text>
+
+      <!-- Regex Guard -->
+      <rect x="300" y="0" width="110" height="26" rx="6" fill="#30363d"/>
+      <text x="355" y="17" fill="#34d399" font-family="sans-serif" font-size="12" font-weight="600" text-anchor="middle">Regex Guard</text>
+    </g>
+  </g>
+
+  <!-- Right Visual Diagram: Pipeline Flow -->
+  <g transform="translate(700, 70)">
+    <!-- Main Card Container -->
+    <rect x="0" y="0" width="420" height="260" rx="12" fill="url(#boxBg)" stroke="#30363d" stroke-width="1.5"/>
+
+    <!-- Header bar -->
+    <path d="M 0 12 C 0 5.37 5.37 0 12 0 L 408 0 C 414.63 0 420 5.37 420 12 L 420 36 L 0 36 Z" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+    <circle cx="18" cy="18" r="5" fill="#f43f5e"/>
+    <circle cx="34" cy="18" r="5" fill="#fbbf24"/>
+    <circle cx="50" cy="18" r="5" fill="#10b981"/>
+    <text x="210" y="22" fill="#8b949e" font-family="monospace" font-size="12" text-anchor="middle">pipeline_orchestrator.py</text>
+
+    <!-- Step 1: Untrusted Extraction -->
+    <g transform="translate(30, 60)">
+      <rect x="0" y="0" width="360" height="44" rx="8" fill="#1e1e2e" stroke="#f43f5e" stroke-width="1"/>
+      <text x="15" y="26" fill="#f43f5e" font-family="monospace" font-size="12" font-weight="bold">Step 1:</text>
+      <text x="75" y="26" fill="#e2e8f0" font-family="monospace" font-size="12">Untrusted LLM (Sanitize Payload)</text>
+    </g>
+
+    <!-- Down Arrow 1 -->
+    <path d="M 210 108 V 118" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)" />
+
+    <!-- Step 2: Trusted Execution -->
+    <g transform="translate(30, 122)">
+      <rect x="0" y="0" width="360" height="44" rx="8" fill="#1e1e2e" stroke="#818cf8" stroke-width="1"/>
+      <text x="15" y="26" fill="#818cf8" font-family="monospace" font-size="12" font-weight="bold">Step 2:</text>
+      <text x="75" y="26" fill="#e2e8f0" font-family="monospace" font-size="12">Trusted LLM (Execute JSON)</text>
+    </g>
+
+    <!-- Down Arrow 2 -->
+    <path d="M 210 170 V 180" stroke="#38bdf8" stroke-width="2" />
+
+    <!-- Step 3: Dual Guardrails -->
+    <g transform="translate(30, 184)">
+      <rect x="0" y="0" width="360" height="48" rx="8" fill="#1e1e2e" stroke="#10b981" stroke-width="1.5" filter="url(#neonGlow)"/>
+      <text x="15" y="28" fill="#10b981" font-family="monospace" font-size="12" font-weight="bold">Step 3:</text>
+      <text x="75" y="20" fill="#34d399" font-family="monospace" font-size="11" font-weight="bold">Deterministic Regex Check</text>
+      <text x="75" y="36" fill="#a7f3d0" font-family="monospace" font-size="11">Semantic Evaluator [PASSED]</text>
+    </g>
+  </g>
+</svg>
