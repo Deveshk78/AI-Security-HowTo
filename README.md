@@ -1,6 +1,10 @@
 <p align="center">
   <img src="./.github/assets/header-banner.svg" alt="Dual LLM Security Pipeline Banner" width="100%">
 </p>
+
+<p align="center">
+  <img src="./.github/assets/icon.svg" alt="Dual LLM Security Pipeline Banner" width="50%">
+</p>
 # AI Security Pipeline Demonstration
 
 This repository demonstrates an enterprise-grade AI security architecture combining:
