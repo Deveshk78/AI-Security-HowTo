@@ -19,8 +19,8 @@ path = Path(__file__).parent / ".env"
 load_dotenv(path)
 
 def run_end_to_end_security_pipeline(user_goal: str, raw_untrusted_input: str):
-    base_url = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434/v1")
-    model_name = os.getenv("MODEL_NAME", "llama3.2")
+    base_url = os.getenv("OLLAMA_BASE_URL")
+    model_name = os.getenv("MODEL_NAME")
 
     is_input_safe, input_reason = RegexGuardrail.validate(raw_untrusted_input)
     if not is_input_safe:
@@ -30,7 +30,7 @@ def run_end_to_end_security_pipeline(user_goal: str, raw_untrusted_input: str):
     # Initialize OpenAI client pointing to local Ollama server
     client = OpenAI(
         base_url=base_url,
-        api_key="ollama"  # Ollama doesn't validate API keys
+        api_key="YOUR-API-KEY"  # Ollama doesn't validate API keys
     )
     
     dual_llm = DualLLMPipeline(client, model_name=model_name)
