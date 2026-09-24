@@ -17,8 +17,8 @@ logger = logging.getLogger("MainOrchestrator")
 load_dotenv()
 
 def run_end_to_end_security_pipeline(user_goal: str, raw_untrusted_input: str):
-    base_url = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434/v1")
-    model_name = os.getenv("MODEL_NAME", "llama3.2")
+    base_url = os.getenv("OLLAMA_BASE_URL")
+    model_name = os.getenv("MODEL_NAME")
     
     # Initialize OpenAI client pointing to local Ollama server
     client = OpenAI(
