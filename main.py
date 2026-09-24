@@ -23,7 +23,7 @@ def run_end_to_end_security_pipeline(user_goal: str, raw_untrusted_input: str):
     # Initialize OpenAI client pointing to local Ollama server
     client = OpenAI(
         base_url=base_url,
-        api_key="ollama"  # Ollama doesn't validate API keys
+        api_key="OLLAMA_API_KEY"  # Ollama doesn't validate API keys
     )
     
     dual_llm = DualLLMPipeline(client, model_name=model_name)
